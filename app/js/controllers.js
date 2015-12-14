@@ -3,13 +3,13 @@
 /* Controllers */
 
 angular.module('myApp.controllers', [])
-  .controller('HomeController', [function() {
+  .controller('HomeController', ['$scope', function($scope) {
   }])
-  .controller('AlbumsController', [function() {
+  .controller('AlbumsController', ['$scope', function($scope) {
   }])
-  .controller('ArtistsController', [function() {
+  .controller('ArtistsController', ['$scope', function($scope) {
   }])
-  .controller('SongsController', [function() {
+  .controller('SongsController', ['$scope', function($scope) {
   }])
-  .controller('FavoritesController', [function() {
+  .controller('FavoritesController', ['$scope', function($scope) {
   }]);
