@@ -2,7 +2,7 @@
   <h1>Record your records</h1>
   <p class="lead">Add your music collection and browse by song, artist, album.
 Favorite the tunes you love.</p>
-  <form> 
+  <form ng-submit="saveMusic()"> 
     <div class="col-xs-4">
       <div class="form-group">
         <label for="song">Song</label>
@@ -29,3 +29,7 @@ Favorite the tunes you love.</p>
 </div>
 
 {{ metadata }}
+<br>
+{{ allMusic }}
+<br>
+{{ songs }}
