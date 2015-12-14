@@ -5,5 +5,11 @@
 angular.module('myApp.controllers', [])
   .controller('HomeController', [function() {
   }])
-  .controller('RecordsController', [function() {
+  .controller('AlbumsController', [function() {
+  }])
+  .controller('ArtistsController', [function() {
+  }])
+  .controller('SongsController', [function() {
+  }])
+  .controller('FavoritesController', [function() {
   }]);
