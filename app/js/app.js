@@ -13,5 +13,8 @@ config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/', {
     templateUrl: 'partials/home.html', 
     controller: 'HomeController'});
-  $routeProvider.otherwise({redirectTo: '/'});
+  $routeProvider.when('/records', {
+    templateUrl: 'partials/records.html', 
+    controller: 'RecordsController'});
+ $routeProvider.otherwise({redirectTo: '/'});
 }]);
