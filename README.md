@@ -1,31 +1,23 @@
-##Recordly
+#RECORDLY
 
-Recordly will be an application that allows for users to input and store their
-record collection. When complete, the user should be able to view their record
-collection, view a list of their "favorite" albums and/or songs, etc. Duplicate
-albums/songs should not be allowed. They should be able to "favorite" any of
-album/song/artist.
+##Completed
+Begin Angular app with seed project
+Setup skeleton html views
+Home, Songs, Artists, Albums, Favorites (?)
+Add routes (models) for all views and controllers in app.js
+Add Bootstrap to make things pretty!
+Make input form work by adding scoped containers (and object) to controllers
+Use directives (ng-model) to bind form input to vars
+Implement scoped function that saves music metadata to arrays
 
-The site should have the following functionality:
+##TODO
+Add database backend (Firebase) and prohibit dupe entries
+Complete html views for Songs, Artists, Albums
+Implement “Favorites” with boolean object
+Refactor code using Angular services
 
-User login
-Search
-Views:
-- Albums
-  - Individual album view with songs
-- Artists
-- Songs
-- Favorites
-- Albums
-  - Artists
-  - Songs
-Using any language or framework you prefer, please build an application using
-testing and best practices. Make the site have a mix of traditional CGI forms
-with page refreshes, as well as at least one each of an AJAX GET and POST (or
-some other modification type verb).
-
-Please provide a link for the GitHub repository and deployed url for the
-application so that we can see the various portions working.
-
-Please use git as you would if you were working on this in a professional
-environment.
+##Best practices
+No extra indentation, return chars
+Add comments when useful
+Commit early and often!
+Screenreader classes in BS forms, etc. for accessibility
