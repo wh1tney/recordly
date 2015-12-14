@@ -12,7 +12,7 @@
 ##TODO
 - Add database backend (Firebase) and prohibit dupe entries
 - Complete html views for Songs, Artists, Albums
-- Implement “Favorites” with boolean object
+- Implement “Favorites” action/function
 - Refactor code using Angular services
 
 ##Best practices
