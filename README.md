@@ -14,6 +14,9 @@
 - Complete html views for Songs, Artists, Albums
 - Implement “Favorites” action/function
 - Refactor code using Angular services
+- TDD! Don’t know how to unit test with Angular :'(
+- Git branches for diff parts of app (e.g. songs, favorites)
+- Share data between controllers and refactor using Angular services
 
 ##Best practices
 - No extra indentation, return chars
