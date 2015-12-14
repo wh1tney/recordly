@@ -2,8 +2,7 @@
 
 ##Completed
 - Begin Angular app with seed project
-- Setup skeleton html views
-- Home, Songs, Artists, Albums, Favorites (?)
+- Setup skeleton html views: Home, Songs, Artists, Albums, Favorites (?)
 - Add routes (models) for all views and controllers in app.js
 - Add Bootstrap to make things pretty!
 - Make input form work by adding scoped containers (and object) to controllers
