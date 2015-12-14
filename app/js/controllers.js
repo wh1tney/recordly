@@ -13,9 +13,9 @@ angular.module('myApp.controllers', [])
 
     $scope.saveMusic = function() {
       $scope.allMusic.push($scope.metadata);
-      $scope.albums.push($scope.metadata.album);
-      $scope.artists.push($scope.metadata.artist);
-      $scope.songs.push($scope.metadata.song);
+      $scope.albums.push({title: $scope.metadata.album, favorite: false});
+      $scope.artists.push({name: $scope.metadata.artist, favorite: false});
+      $scope.songs.push({title: $scope.metadata.song, favorite: false});
 
       // Clear out data after it has been saved!
       $scope.metadata = {song: '', artist: '', album: ''}; 
