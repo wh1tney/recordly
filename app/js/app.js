@@ -13,8 +13,17 @@ config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/', {
     templateUrl: 'partials/home.html', 
     controller: 'HomeController'});
-  $routeProvider.when('/records', {
-    templateUrl: 'partials/records.html', 
-    controller: 'RecordsController'});
+  $routeProvider.when('/albums', {
+    templateUrl: 'partials/albums.html', 
+    controller: 'AlbumsController'});
+  $routeProvider.when('/artists', {
+    templateUrl: 'partials/artists.html', 
+    controller: 'ArtistsController'});
+  $routeProvider.when('/songs', {
+    templateUrl: 'partials/songs.html', 
+    controller: 'SongsController'});
+  $routeProvider.when('/favorites', {
+    templateUrl: 'partials/favorites.html', 
+    controller: 'FavoritesController'});
  $routeProvider.otherwise({redirectTo: '/'});
 }]);
