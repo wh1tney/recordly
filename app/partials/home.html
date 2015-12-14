@@ -28,8 +28,17 @@ Favorite the tunes you love.</p>
   </form>
 </div>
 
-{{ metadata }}
-<br>
-{{ allMusic }}
-<br>
-{{ songs }}
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <th>Song</th>
+      <th>Artist</th>
+      <th>Album</th>
+    </tr>
+    <tr ng-repeat="metadata in allMusic">
+      <td>{{ metadata.song }}</td>
+      <td>{{ metadata.artist }}</td>
+      <td>{{ metadata.album }}</td>
+    </tr>
+  </thead>
+</table>
