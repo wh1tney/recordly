@@ -11,14 +11,14 @@ The site should have the following functionality:
 User login
 Search
 Views:
-Albums
-Individual album view with songs
-Artists
-Songs
-Favorites
-Albums
-Artists
-Songs
+- Albums
+  - Individual album view with songs
+- Artists
+- Songs
+- Favorites
+- Albums
+  - Artists
+  - Songs
 Using any language or framework you prefer, please build an application using
 testing and best practices. Make the site have a mix of traditional CGI forms
 with page refreshes, as well as at least one each of an AJAX GET and POST (or
