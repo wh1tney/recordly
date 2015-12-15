@@ -5,7 +5,7 @@
 - User can view: Songs, Artists, Albums
 - User can register/login/logout
 
-##Done
+##Completed
 - Seed Angular app
 - Setup empty html views: Home, Songs, Artists, Albums
 - Add routes for all views and controllers
