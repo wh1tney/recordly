@@ -32,8 +32,22 @@ angular.module('myApp.controllers', [])
   }])
   .controller('SongsController', ['$scope', function($scope) {
   }])
-  .controller('AuthController', ['$scope', '$firebaseAuth', function($scope, $firebaseAuth) {
+  .controller('AuthController', ['$scope', '$firebaseAuth', '$rootScope',
+function($scope, $firebaseAuth, $rootScope) {
+
+    // Callback for checking authentication state
+    function authDataCallback(authData) {
+      if (authData) {
+        // save logged in user on rootScope
+        $rootScope.user = authData.uid;
+      } else {
+        console.log("User is logged out");
+        $rootScope.user = null;
+      }
+    }
+
     var auth = new Firebase('https://recordly.firebaseio.com/');
+    auth.onAuth(authDataCallback);
 
     $scope.user = {email:'', password:''};
 
