@@ -1,1 +1,7 @@
-This is the view for songs.
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr ng-repeat="metadata in allMusic">
+      <td>{{ metadata.song }}</td>
+    </tr>
+  </thead>
+</table>

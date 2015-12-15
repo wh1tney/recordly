@@ -1,1 +1,7 @@
-This is the view of artist data.
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr ng-repeat="metadata in allMusic">
+      <td>{{ metadata.artist }}</td>
+    </tr>
+  </thead>
+</table>

@@ -14,15 +14,18 @@ config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/', {
     templateUrl: 'partials/home.html', 
     controller: 'HomeController'});
+  $routeProvider.when('/music', {
+    templateUrl: 'partials/music.html', 
+    controller: 'MusicController'});
   $routeProvider.when('/albums', {
     templateUrl: 'partials/albums.html', 
-    controller: 'AlbumsController'});
+    controller: 'MusicController'});
   $routeProvider.when('/artists', {
     templateUrl: 'partials/artists.html', 
-    controller: 'ArtistsController'});
+    controller: 'MusicController'});
   $routeProvider.when('/songs', {
     templateUrl: 'partials/songs.html', 
-    controller: 'SongsController'});
+    controller: 'MusicController'});
   $routeProvider.when('/register', {
     templateUrl: 'partials/register.html', 
     controller: 'AuthController'});

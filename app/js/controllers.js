@@ -3,7 +3,9 @@
 /* Controllers */
 
 angular.module('myApp.controllers', [])
-  .controller('HomeController', ['$scope', '$firebaseArray', function($scope, $firebaseArray) {
+  .controller('HomeController', ['$scope', function($scope) {
+  }])
+  .controller('MusicController', ['$scope', '$firebaseArray', function($scope, $firebaseArray) {
     var recordsRef = new Firebase("https://recordly.firebaseio.com/");
 
     // Firebase synchronized array
@@ -25,12 +27,6 @@ angular.module('myApp.controllers', [])
       // Clear out data after it has been saved!
       $scope.metadata = {song: '', artist: '', album: ''}; 
     };
-  }])
-  .controller('AlbumsController', ['$scope', function($scope) {
-  }])
-  .controller('ArtistsController', ['$scope', function($scope) {
-  }])
-  .controller('SongsController', ['$scope', function($scope) {
   }])
   .controller('AuthController', ['$scope', '$firebaseAuth', '$rootScope',
 '$location',
@@ -67,7 +63,7 @@ function($scope, $firebaseAuth, $rootScope, $location) {
         console.log("Login failed!\n%s" % error);
       } else {
         console.log(data);
-        $location.path("/");
+        $location.path("/music");
         $scope.$apply();
       }
     }
@@ -82,5 +78,6 @@ function($scope, $firebaseAuth, $rootScope, $location) {
 
     $scope.logout = function() {
       auth.unauth();
+      $location.path("/");
     }
   }]);

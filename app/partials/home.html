@@ -4,43 +4,4 @@
 Favorite the tunes you love.</p>
   <p><a href="#/register"><button ng-hide="currentUser" type="submit" class="btn btn-lg">Sign
 Up</button></a></p>
-  <form ng-show="currentUser" ng-submit="saveMusic()"> 
-    <div class="col-xs-4">
-      <div class="form-group">
-        <label for="song">Song</label>
-        <input type="text" class="form-control" id="song" placeholder="Drop It
- Like It's Hot" ng-model="metadata.song">
-      </div>
-    </div>
-    <div class="col-xs-4">
-      <div class="form-group">
-        <label for="artist">Artist</label>
-        <input type="text" class="form-control" id="artist" placeholder="Snoop
- Dogg" ng-model="metadata.artist">
-      </div>
-    </div>
-    <div class="col-xs-4">
-      <div class="form-group">
-        <label for="album">Album</label>
-        <input type="text" class="form-control" id="album" placeholder="R&G
- (Rhythm & Gangsta): The Masterpiece" ng-model="metadata.album">
-      </div>
-    </div>
-    <p><button type="submit" class="btn btn-lg btn-success center-block">Save</button></p>
-  </form>
-</div>
 
-<table ng-show="currentUser" class="table table-striped table-bordered">
-  <thead>
-    <tr>
-      <th>Song</th>
-      <th>Artist</th>
-      <th>Album</th>
-    </tr>
-    <tr ng-repeat="metadata in allMusic">
-      <td>{{ metadata.song }}</td>
-      <td>{{ metadata.artist }}</td>
-      <td>{{ metadata.album }}</td>
-    </tr>
-  </thead>
-</table>
