@@ -3,8 +3,14 @@
 /* Controllers */
 
 angular.module('myApp.controllers', [])
-  .controller('HomeController', ['$scope', function($scope) {
-    $scope.allMusic = [];
+  .controller('HomeController', ['$scope', '$firebaseArray', function($scope,
+$firebaseArray) {
+    var recordsRef = new Firebase("https://recordly.firebaseio.com/");
+
+    // Firebase synchronized array
+    $scope.allMusic = $firebaseArray(recordsRef);
+
+    // TODO: synchronize these arrays
     $scope.albums = [];
     $scope.artists = [];
     $scope.songs = [];
@@ -12,7 +18,7 @@ angular.module('myApp.controllers', [])
     $scope.metadata = {song: '', artist: '', album: ''}; 
 
     $scope.saveMusic = function() {
-      $scope.allMusic.push($scope.metadata);
+      $scope.allMusic.$add($scope.metadata);
       $scope.albums.push({title: $scope.metadata.album, favorite: false});
       $scope.artists.push({name: $scope.metadata.artist, favorite: false});
       $scope.songs.push({title: $scope.metadata.song, favorite: false});
