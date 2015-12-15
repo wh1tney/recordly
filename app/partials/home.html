@@ -2,7 +2,9 @@
   <h1>Record your records</h1>
   <p class="lead">Add your music collection and browse by song, artist, album.
 Favorite the tunes you love.</p>
-  <form ng-submit="saveMusic()"> 
+  <p><a href="#/register"><button ng-hide="currentUser" type="submit" class="btn btn-lg">Sign
+Up</button></a></p>
+  <form ng-show="currentUser" ng-submit="saveMusic()"> 
     <div class="col-xs-4">
       <div class="form-group">
         <label for="song">Song</label>
@@ -28,7 +30,7 @@ Favorite the tunes you love.</p>
   </form>
 </div>
 
-<table class="table table-striped table-bordered">
+<table ng-show="currentUser" class="table table-striped table-bordered">
   <thead>
     <tr>
       <th>Song</th>

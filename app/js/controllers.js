@@ -33,16 +33,17 @@ angular.module('myApp.controllers', [])
   .controller('SongsController', ['$scope', function($scope) {
   }])
   .controller('AuthController', ['$scope', '$firebaseAuth', '$rootScope',
-function($scope, $firebaseAuth, $rootScope) {
+'$location',
+function($scope, $firebaseAuth, $rootScope, $location) {
 
     // Callback for checking authentication state
     function authDataCallback(authData) {
       if (authData) {
         // save logged in user on rootScope
-        $rootScope.user = authData.uid;
+        $rootScope.currentUser = authData.uid;
       } else {
         console.log("User is logged out");
-        $rootScope.user = null;
+        $rootScope.currentUser = null;
       }
     }
 
@@ -56,7 +57,7 @@ function($scope, $firebaseAuth, $rootScope) {
       if (error) {
         console.log("Registration failed!");
       } else {
-        auth.authWithPassword($scope.user, loginHandler);
+        $scope.login();
       }
     }
 
@@ -66,6 +67,8 @@ function($scope, $firebaseAuth, $rootScope) {
         console.log("Login failed!\n%s" % error);
       } else {
         console.log(data);
+        $location.path("/");
+        $scope.$apply();
       }
     }
 
@@ -75,5 +78,9 @@ function($scope, $firebaseAuth, $rootScope) {
 
     $scope.login = function() {
       auth.authWithPassword($scope.user, loginHandler);
+    }
+
+    $scope.logout = function() {
+      auth.unauth();
     }
   }]);
