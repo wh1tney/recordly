@@ -33,5 +33,6 @@ $firebaseArray) {
   }])
   .controller('SongsController', ['$scope', function($scope) {
   }])
-  .controller('FavoritesController', ['$scope', function($scope) {
+  .controller('AuthController', ['$scope', function($scope) {
+
   }]);

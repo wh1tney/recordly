@@ -23,8 +23,11 @@ config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/songs', {
     templateUrl: 'partials/songs.html', 
     controller: 'SongsController'});
-  $routeProvider.when('/favorites', {
-    templateUrl: 'partials/favorites.html', 
-    controller: 'FavoritesController'});
+  $routeProvider.when('/register', {
+    templateUrl: 'partials/register.html', 
+    controller: 'AuthController'});
+  $routeProvider.when('/login', {
+    templateUrl: 'partials/login.html', 
+    controller: 'AuthController'});
  $routeProvider.otherwise({redirectTo: '/'});
 }]);
