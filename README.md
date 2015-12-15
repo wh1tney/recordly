@@ -1,6 +1,6 @@
 #RECORDLY
 
-##MVP Stories
+##MVP Requirements (1 hour)
 - User can save song, artist, and album
 - User can view: Songs, Artists, Albums
 - User can register/login/logout
