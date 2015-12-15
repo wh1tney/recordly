@@ -3,8 +3,7 @@
 /* Controllers */
 
 angular.module('myApp.controllers', [])
-  .controller('HomeController', ['$scope', '$firebaseArray', function($scope,
-$firebaseArray) {
+  .controller('HomeController', ['$scope', '$firebaseArray', function($scope, $firebaseArray) {
     var recordsRef = new Firebase("https://recordly.firebaseio.com/");
 
     // Firebase synchronized array
@@ -33,6 +32,15 @@ $firebaseArray) {
   }])
   .controller('SongsController', ['$scope', function($scope) {
   }])
-  .controller('AuthController', ['$scope', function($scope) {
+  .controller('AuthController', ['$scope', '$firebaseAuth', function($scope, $firebaseAuth) {
+    var authRef = new Firebase("https://recordly.firebaseio.com/");
+    var auth = $firebaseAuth(authRef);
 
+    $scope.user = {email:'', password:''};
+
+    $scope.register = function() {
+      auth.$createUser($scope.user).then(function(data) {
+        console.log(data);
+      });
+    };
   }]);
