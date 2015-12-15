@@ -33,14 +33,14 @@ angular.module('myApp.controllers', [])
   .controller('SongsController', ['$scope', function($scope) {
   }])
   .controller('AuthController', ['$scope', '$firebaseAuth', function($scope, $firebaseAuth) {
-    var authRef = new Firebase("https://recordly.firebaseio.com/");
+    var authRef = new Firebase('https://recordly.firebaseio.com/');
     var auth = $firebaseAuth(authRef);
 
     $scope.user = {email:'', password:''};
 
     $scope.register = function() {
       auth.$createUser($scope.user).then(function(data) {
-        console.log(data);
+        auth.$login('password', $scope.user);
       });
     };
   }]);
