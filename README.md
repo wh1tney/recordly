@@ -1,10 +1,15 @@
 #RECORDLY
 
-##Completed
-- Begin Angular app with seed project
-- Setup skeleton html views: Home, Songs, Artists, Albums, Favorites (?)
-- Add routes (models) for all views and controllers in app.js
-- Add Bootstrap to make things pretty!
+##MVP Stories
+- User can save song, artist, and album
+- User can view: Songs, Artists, Albums
+- User can register/login/logout
+
+##Done
+- Seed Angular app
+- Setup empty html views: Home, Songs, Artists, Albums
+- Add routes for all views and controllers
+- Bootstrap made things pretty!
 - Make input form work by adding scoped containers (and object) to controllers
 - Use directives (ng-model) to bind form input to vars
 - Implement scoped function that saves music metadata to arrays
@@ -12,12 +17,13 @@
 - App deployed to [Firebase](https://recordly.firebaseapp.com/#/)
 
 ##TODO
-- Prohibit dupe entries in Firebase backend
+- Prohibit dupe music entries in Firebase backend
 - Complete html views for Songs, Artists, Albums
-- Implement “Favorites” action/function
-- User authentication using JS callbacks
+- Implement “Favorites” action
+- Persist data for logged in user in Firebase
+- Share data between controllers using Angular services
+- Refactor authentication functions (register, login, logout) into single object
 - TDD! Don’t yet know how to unit test with Angular :'(
-- Share data between controllers and refactor using Angular services
 
 ##Best practices
 - No superfluous indentation, return chars
