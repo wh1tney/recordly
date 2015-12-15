@@ -33,14 +33,33 @@ angular.module('myApp.controllers', [])
   .controller('SongsController', ['$scope', function($scope) {
   }])
   .controller('AuthController', ['$scope', '$firebaseAuth', function($scope, $firebaseAuth) {
-    var authRef = new Firebase('https://recordly.firebaseio.com/');
-    var auth = $firebaseAuth(authRef);
+    var auth = new Firebase('https://recordly.firebaseio.com/');
 
     $scope.user = {email:'', password:''};
 
+    // Callback function for user registration
+    function registrationHandler(error, data) {
+      if (error) {
+        console.log("Registration failed!");
+      } else {
+        auth.authWithPassword($scope.user, loginHandler);
+      }
+    }
+
+    // Callback function for user login
+    function loginHandler(error, data) {
+      if (error) {
+        console.log("Login failed!\n%s" % error);
+      } else {
+        console.log(data);
+      }
+    }
+
     $scope.register = function() {
-      auth.$createUser($scope.user).then(function(data) {
-        auth.$login('password', $scope.user);
-      });
-    };
+      auth.createUser($scope.user, registrationHandler)
+    }
+
+    $scope.login = function() {
+      auth.authWithPassword($scope.user, loginHandler);
+    }
   }]);
